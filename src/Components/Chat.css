@@ -1,0 +1,51 @@
+.Chat {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.Response {
+  width: 80vw;
+  box-sizing: border-box;
+  background-color: rgb(26, 28, 33);
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  padding: 1rem;
+  text-align: left;
+  font-size: 60%;
+  color: white;
+  resize: none;
+}
+
+.Question {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    gap : 0.5rem;
+}
+
+.in {
+  width: 80vw;
+  box-sizing: border-box;
+  background-color: rgb(26, 28, 33);
+  border: none;
+  border-radius: 5px;
+  padding-left: 1rem;
+  font-size: 70%;
+  color: white;
+  overflow-wrap: break-word;
+  resize: none;
+  
+}
+
+.btn {
+    background-color: rgb(21, 101, 101);
+    border: none;
+    border-radius: 5px;
+    color: white;
+
+}

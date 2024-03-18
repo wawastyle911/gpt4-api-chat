@@ -1,0 +1,15 @@
+.Key-input-label {
+  padding-right: 6px;
+}
+.Api-key {
+  box-sizing: border-box;
+  background-color: rgb(26, 28, 33);
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 40rem;
+  padding-left: 1rem;
+  font-family: Roboto;
+  font-size: 80%;
+  color: white;
+}
