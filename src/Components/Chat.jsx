@@ -18,12 +18,18 @@ export default function Chat(props) {
       const result = await openai.chat.completions.create({
         messages: [{ role: "system", content: prompt }],
         model: "gpt-4-turbo-preview",
+        stream : true,
       });
-      console.log(result.choices[0].message.content);
-      setApiResponse(result.choices[0].message.content);
+      //console.log(result.choices[0].message.content);
+      //setApiResponse(result.choices[0].message.content);
+      let output = "";
+      for await (const chunk of result) {
+        output += chunk.choices[0]?.delta?.content || ""
+        setApiResponse(output);}
     } catch (e) {
       console.log(e);
       setApiResponse("Something is going wrong, Please try again.");
+      
     }
     setLoading(false);
   };
@@ -39,14 +45,13 @@ export default function Chat(props) {
             className="in"
             type="text"
             value={prompt}
-            placeholder="Please ask to openai"
+            placeholder="Please ask openai"
             onChange={(e) => setPrompt(e.target.value)}
           ></textarea>
           <button disabled={loading || prompt.length === 0} type="submit" className="btn">
             {loading ? "Generating..." : "Generate"}
           </button>
         </form>
-      
     </div>
   );
 }

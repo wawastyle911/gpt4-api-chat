@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
        
         <p>
-          Welcome to gpt4 api chat
+          Chat with gpt4
         </p>
          <Apikey/>
       </header>
