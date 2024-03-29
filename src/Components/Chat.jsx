@@ -45,7 +45,7 @@ export default function Chat() {
     <div className="Chat-Page">
       <div className="Chat-History"></div>
       <div className="Chat-Container">
-        <p>Chat With GPT4</p>
+        <p className="ChatTitle">Chat With GPT4</p>
         <div className="Chat">
           <textarea className="Response" value={apiResponse}></textarea>
           <form className="Question" onSubmit={handleSubmit}>

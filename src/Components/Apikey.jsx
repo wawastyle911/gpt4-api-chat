@@ -66,6 +66,7 @@ export default function Apikey() {
             value={key}
         />
       </div>
+      <a href="https://platform.openai.com/docs/quickstart/account-setup" rel="noreferrer" target ="_blank" className="Key-Help">How do I get a key?</a>
       
     </form> 
      </div>

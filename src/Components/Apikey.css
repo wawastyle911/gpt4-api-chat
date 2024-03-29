@@ -1,8 +1,8 @@
 .Key-input-label {
   padding-right: 6px;
 }
-.Title{
-    font-size: 3rem;
+.Title {
+  font-size: 3rem;
 }
 .Api-key {
   box-sizing: border-box;
@@ -15,19 +15,23 @@
   font-family: Roboto;
   font-size: 80%;
   color: white;
-  box-shadow: 0rem 0rem 0.5rem rgb(25, 26, 26) ;
+  box-shadow: 0rem 0rem 0.5rem rgb(25, 26, 26);
 }
-.Key-form{
-    display: flex;
-    flex-direction: column;
+.Key-form {
+  display: flex;
+  flex-direction: column;
 }
-.Error{
-    color: red;
-    max-width: fit-content;
-    font-size: 60%;
+.Error {
+  color: red;
+  max-width: fit-content;
+  font-size: 60%;
 
-    
-    padding-right: 0.4rem;
-    border-radius: 5px;
-
+  padding-right: 0.4rem;
+  border-radius: 5px;
+}
+.Key-Help {
+  color: white;
+  accent-color: white;
+  align-self: self-end;
+  font-size: 50%;
 }
