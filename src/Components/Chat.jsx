@@ -2,14 +2,16 @@ import React from "react";
 import { useState } from "react";
 import OpenAIApi from "openai";
 import "./Chat.css";
-export default function Chat(props) {
+import ApiKey from "./Apikey";
+export default function Chat() {
   const openai = new OpenAIApi({
-    apiKey: props.data,
+    apiKey: localStorage.getItem("key"),
     dangerouslyAllowBrowser: true,
   });
   const [prompt, setPrompt] = useState("");
   const [apiResponse, setApiResponse] = useState("");
   const [loading, setLoading] = useState(false);
+  const [askKey, setAskKey] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,28 +35,41 @@ export default function Chat(props) {
     }
     setLoading(false);
   };
-
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    setAskKey(true);
+  };
   return (
-    <div>
-      <p>Chat With GPT4</p>
-      <div className="Chat">
-        <textarea className="Response" value={apiResponse}></textarea>
-        <form className="Question" onSubmit={handleSubmit}>
-          <textarea
-            className="in"
-            type="text"
-            value={prompt}
-            placeholder="Ask anything..."
-            onChange={(e) => setPrompt(e.target.value)}
-          ></textarea>
-          <button
-            disabled={loading || prompt.length === 0}
-            type="submit"
-            className="btn"
-          >
-            {loading ? "Generating..." : "Generate"}
-          </button>
-        </form>
+    askKey ? <ApiKey/> :
+    <div className="Chat-Page">
+      <div className="Chat-History"></div>
+      <div className="Chat-Container">
+        <p>Chat With GPT4</p>
+        <div className="Chat">
+          <textarea className="Response" value={apiResponse}></textarea>
+          <form className="Question" onSubmit={handleSubmit}>
+            <textarea
+              className="in"
+              type="text"
+              value={prompt}
+              placeholder="Ask anything..."
+              onChange={(e) => setPrompt(e.target.value)}
+            ></textarea>
+            <button
+              disabled={loading || prompt.length === 0}
+              type="submit"
+              className="btn"
+            >
+              {loading ? "Generating..." : "Generate"}
+            </button>
+          </form>
+        </div>
+      </div>
+      <div className="Account-Actions">
+        <button className="Logout" onClick={logout}>
+          Log out
+        </button>
       </div>
     </div>
   );

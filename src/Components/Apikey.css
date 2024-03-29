@@ -1,6 +1,9 @@
 .Key-input-label {
   padding-right: 6px;
 }
+.Title{
+    font-size: 3rem;
+}
 .Api-key {
   box-sizing: border-box;
   background-color: rgb(26, 28, 33);
@@ -12,6 +15,7 @@
   font-family: Roboto;
   font-size: 80%;
   color: white;
+  box-shadow: 0rem 0rem 0.5rem rgb(25, 26, 26) ;
 }
 .Key-form{
     display: flex;

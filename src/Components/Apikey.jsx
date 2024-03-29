@@ -37,6 +37,8 @@ export default function Apikey() {
     if(test){    
         //setWrongKey(false);
         setShowChat(true);
+        localStorage.setItem('showChat', true)
+        localStorage.setItem('key', key)
     }
     else{
         setKey("")
@@ -47,7 +49,7 @@ export default function Apikey() {
   };
   return (
     
-    showChat ? <Chat data={key}/> :
+    localStorage.getItem('showChat') ? <Chat/> :
     <div>
          <p className='Title'>
     Welcome

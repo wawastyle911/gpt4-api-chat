@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 .Title {
   position: relative;
   top: 0;
@@ -16,7 +14,8 @@
   }
 }
 
-.App-header {
+.App{
+  text-align: center;
   background-color: #2f3541;
   min-height: 100vh;
   display: flex;
