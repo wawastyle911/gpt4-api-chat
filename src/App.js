@@ -7,10 +7,6 @@ function App() {
     <div className="App">
       
       <header className="App-header">
-       
-        <p>
-          Chat with gpt4
-        </p>
          <Apikey/>
       </header>
       
